@@ -13,11 +13,12 @@ const usersSchema = new Schema({
     trim: true,
     require:true,
   },
-  imageUrl: {
+  photoUrl: {
     type: String,
   },
   phone: {
     type: Number,
+    require:false,
   },
   email: {
     type: String,
@@ -25,15 +26,15 @@ const usersSchema = new Schema({
     trim: true,
     require:true,
   },
-  uid: {
-    type: String,
-    unique:true,
-  },
-  // role:{
-  //   type:String,
-  //   enum:['BASIC','ADMIN'],
-  //   default:'BASIC'
+  // uid: {
+  //   type: String,
+  //   unique:true,
   // },
+  role:{
+    type:String,
+    enum:['BASIC','ADMIN'],
+    default:'BASIC'
+  },
 
 });
 export const Users = model("Users", usersSchema);

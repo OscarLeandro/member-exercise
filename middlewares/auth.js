@@ -18,13 +18,13 @@ export const authCheck = async (req) => {
    }
  };
 
- export const roleCheck = async (email, role) => {
+//  export const roleCheck = async (email, role) => {
 
-  try {
+//   try {
 
     
-  } catch (error) {
+//   } catch (error) {
     
-  }
+//   }
 
- }
+//  }

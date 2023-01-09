@@ -17,11 +17,12 @@ export const getAll = async (_req, res) => {
 export const create = async (req, res) => {
     try {
         const currentUser = await authCheck(req)
-        const {name, username} = req.body;
+        const {name, displayName,phone,photoUrl,role} = req.body;
         const {email} = currentUser;
         console.log(currentUser);
+        console.log(email);
 
-        const createUser = await Users({name, username,email,role:'NORMAL'}).save()
+        const createUser = await Users({phone,name, displayName, photoUrl,email,role:'BASIC'}).save()
         console.log(createUser);
         res.status(201).json(createUser)
     } catch (err) {
